@@ -9,68 +9,58 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var MainLabel: UILabel!
+    @IBOutlet private weak var counterLabel: UILabel!
     
-    @IBOutlet weak var MainButton: UIButton!
+    @IBOutlet private weak var counterButton: UIButton!
     
-    @IBOutlet weak var MinusButton: UIButton!
+    @IBOutlet private weak var minusButton: UIButton!
     
-    @IBOutlet weak var PlusButton: UIButton!
+    @IBOutlet private weak var plusButton: UIButton!
     
-    @IBOutlet weak var ResetButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
     
-    @IBOutlet weak var HistoryTextView: UITextView!
-    
+    @IBOutlet private weak var historyTextView: UITextView!
     
     private var count: Int = 0
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        counterLabel.text = "Значение счетчика: \(count)"
+        plusButton.tintColor = .red
+        historyTextView.isEditable = false
+        historyTextView.text = "История изменений: \n"
+    }
     
     private func addHistory (description: String) {
         let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let currentDate = dateFormatter.string(from: Date())
-
-        HistoryTextView.text += "\(currentDate): \(description) \n"
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        MainLabel.text = "Значение счетчика: \(count)"
-        PlusButton.tintColor = .red
-        HistoryTextView.isEditable = false
-        HistoryTextView.text = "История изменений: \n"
-       
+        historyTextView.text += "\(currentDate): \(description) \n"
     }
     
-    @IBAction func mainButtonDidTap(_ sender: Any) {
+    @IBAction private func mainButtonDidTap(_ sender: Any) {
         count += 1
-        MainLabel.text = "Значение счетчика: \(count)"
-            }
+        counterLabel.text = "Значение счетчика: \(count)"
+    }
     
-    @IBAction func plusButtonDidTap(_ sender: Any) {
+    @IBAction private func plusButtonDidTap(_ sender: Any) {
         count += 1
-        MainLabel.text = "Значение счетчика: \(count)"
+        counterLabel.text = "Значение счетчика: \(count)"
         addHistory(description: "значение изменено на +1")
     }
     
-    @IBAction func minusButtonDidTap(_ sender: Any) {
-        if count > 0 { count -= 1 }
-        else { return }
-        MainLabel.text = "Значение счетчика: \(count)"
-        
-        if count == 0 {
+    @IBAction private func minusButtonDidTap(_ sender: Any) {
+        if count > 0 { count -= 1; addHistory(description: "значение изменено на -1")
+        } else {
             addHistory(description: "попытка уменьшить значение счётчика ниже 0")
-        } else { addHistory(description: "значение изменено на -1")
         }
+        counterLabel.text = "Значение счетчика: \(count)"
     }
     
-    @IBAction func resetButtonDidTap(_ sender: Any) {
+    @IBAction private func resetButtonDidTap(_ sender: Any) {
         count = 0
-        MainLabel.text = "Значение счетчика: \(count)"
+        counterLabel.text = "Значение счетчика: \(count)"
         addHistory(description: "значение сброшено")
     }
-    
 }
 

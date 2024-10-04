@@ -97,12 +97,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="HistoryTextView" destination="a7R-pr-ugq" id="wAU-kb-Xkg"/>
-                        <outlet property="MainButton" destination="2wJ-yp-N74" id="Kar-as-xHy"/>
-                        <outlet property="MainLabel" destination="dky-Ys-Dp0" id="TbU-js-4x9"/>
-                        <outlet property="MinusButton" destination="Y1H-J1-iHC" id="zwK-Ps-ReV"/>
-                        <outlet property="PlusButton" destination="3bQ-4L-bJH" id="tlc-Dz-9Ym"/>
-                        <outlet property="ResetButton" destination="9FU-nh-ATs" id="SXS-Fh-d90"/>
+                        <outlet property="counterButton" destination="2wJ-yp-N74" id="Kar-as-xHy"/>
+                        <outlet property="counterLabel" destination="dky-Ys-Dp0" id="TbU-js-4x9"/>
+                        <outlet property="historyTextView" destination="a7R-pr-ugq" id="wAU-kb-Xkg"/>
+                        <outlet property="minusButton" destination="Y1H-J1-iHC" id="zwK-Ps-ReV"/>
+                        <outlet property="plusButton" destination="3bQ-4L-bJH" id="tlc-Dz-9Ym"/>
+                        <outlet property="resetButton" destination="9FU-nh-ATs" id="SXS-Fh-d90"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,10 +118,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
